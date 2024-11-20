@@ -2,6 +2,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    scroll-behavior: smooth;
 }
 
 :root {
@@ -498,6 +499,95 @@ h3 {
                 @media (max-width:1024px) {
                     grid-column: span 5;
                     grid-row: span 2;
+                }
+            }
+        }
+    }
+}
+
+.chatbot {
+    .chatbot-blue {
+        background-color: var(--blue-100);
+        border-radius: 30px;
+        padding: 30px;
+        display: flex;
+        gap: 30px;
+        @media (max-width:1024px) {
+            flex-direction: column;
+        }
+        p {
+            margin-bottom: 30px;
+        }
+        .chat-info {
+            flex: 3;
+            padding-right: 30px;
+        }
+        .chat-box {
+            flex: 4;
+            background-color: white;
+            border-radius: 15px;
+            padding: 30px;
+            flex-direction: column;
+            .scroll-area {
+                max-height: 300px;
+                height: 300px;
+                overflow-y: scroll;
+                ul {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-end;
+                    gap: 15px;
+                    li {
+                        display: flex;
+                        align-items: center;
+                        gap: 15px;
+                        &:nth-child(even){
+                            text-align: end;
+                            flex-direction: row-reverse;
+                            span {
+                                background-color: var(--yellow);
+                            }
+                        }
+                        span {
+                            background-color: var(--blue-400);
+                            height: 64px;
+                            width: 64px;
+                            border-radius: 50%;
+                            display: inline-flex;
+                            align-items: center;
+                            justify-content: center;
+                        } 
+                        div {
+                            flex: 1;
+                        }
+                    }
+                }
+            }
+
+            .chat-message {
+                display: flex;
+                gap: 15px;
+                margin-top: 15px;
+                input {
+                    border-radius: 10px;
+                    flex: 1;
+                    padding: 15px;
+                    border: 1px solid transparent;
+                    background-color: var(--base-100);
+                    &:hover {
+                        outline: none;
+                        background-color: white;
+                        border: 1px solid var(--base-100);
+                    }
+                    &:focus {
+                        outline: none;
+                        background-color: white;
+                        border: 1px solid var(--base-100);
+                    }
+                }
+                button {
+                    border: none;
+                    cursor: pointer;
                 }
             }
         }
